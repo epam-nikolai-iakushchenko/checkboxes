@@ -5,12 +5,6 @@ import './CheckboxGroup.css';
 const handleOnKeyPress = (event) => {
   if (event.key === 'Home') {
     event.preventDefault();
-    console.log('Home, Event:', event);
-    console.log('event.currentTarget', event.currentTarget);
-    console.log(
-      'event.currentTarget.firstChild',
-      event.currentTarget.firstChild
-    );
     event.currentTarget.firstChild.focus();
     event.currentTarget.firstChild.scrollIntoView();
     event.currentTarget.firstChild.setAttribute('aria-selected', 'true');
@@ -20,7 +14,6 @@ const handleOnKeyPress = (event) => {
   }
   if (event.key === 'End') {
     event.preventDefault();
-    console.log('End, Event:', event);
     event.currentTarget.lastChild.focus();
     event.currentTarget.lastChild.scrollIntoView({
       block: 'center',
