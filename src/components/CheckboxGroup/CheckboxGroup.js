@@ -1,31 +1,37 @@
-import React from 'react';
-import { Checkbox } from '../Checkbox';
-import './CheckboxGroup.css';
+import React from "react";
+import { Checkbox } from "../Checkbox";
+import "./CheckboxGroup.css";
+
+const defocusItem = (element) => {
+  if (!element) {
+    return;
+  }
+};
 
 const handleOnKeyPress = (event) => {
-  if (event.key === 'Home') {
+  if (event.key === "Home") {
     event.preventDefault();
     event.currentTarget.firstChild.focus();
     event.currentTarget.firstChild.scrollIntoView();
-    event.currentTarget.firstChild.setAttribute('aria-selected', 'true');
+    event.currentTarget.firstChild.setAttribute("aria-selected", "true");
     event.currentTarget.firstChild
-      .querySelector('input')
-      .classList.add('focused');
+      .querySelector("input")
+      .classList.add("focused");
   }
-  if (event.key === 'End') {
+  if (event.key === "End") {
     event.preventDefault();
     event.currentTarget.lastChild.focus();
     event.currentTarget.lastChild.scrollIntoView({
-      block: 'center',
-      inline: 'nearest',
+      block: "center",
+      inline: "nearest",
     });
-    event.currentTarget.lastChild.setAttribute('aria-selected', 'true');
+    event.currentTarget.lastChild.setAttribute("aria-selected", "true");
     event.currentTarget.lastChild
-      .querySelector('input')
-      .classList.add('focused');
+      .querySelector("input")
+      .classList.add("focused");
     console.log(
       'event.currentTarget.lastChild.querySelector("input"):',
-      event.currentTarget.lastChild.querySelector('input')
+      event.currentTarget.lastChild.querySelector("input")
     );
   }
 };
