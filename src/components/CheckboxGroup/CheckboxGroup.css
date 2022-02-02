@@ -18,13 +18,3 @@
   break-inside: avoid;
   list-style: none;
 }
-
-.select-database__list-item input:focus {
-  /*outline: none;*/
-}
-
-.focused {
-  background: lightblue;
-  border: 1px solid black;
-  outline: solid;
-}
