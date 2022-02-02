@@ -1,0 +1,30 @@
+.select-database__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.select-database__list-item {
+  /* margin-block-start: 1rem; // Use of margin-block-start here on the LI results in an 
+  uneven alignment across columns. The margin is honored in the first column
+  where it affsets the first LI fronm the UL, but the LI at the top of the 
+  second column does not have the UL or preceeding LI, so the margin collapses. */
+  margin-block-end: 1rem;
+  line-height: 1.3;
+
+  /* Determines how an element will break across columns. With the LI,
+  if the database longDbName is more than one line, the entire LI would 
+  break to the next line. */
+  break-inside: avoid;
+  list-style: none;
+}
+
+.select-database__list-item input:focus {
+  outline: solid;
+}
+
+.focused {
+  background: lightblue;
+  border: 1px solid black;
+  outline: solid;
+}

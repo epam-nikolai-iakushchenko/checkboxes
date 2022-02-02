@@ -1,0 +1,80 @@
+.select-database {
+  position: relative;
+  padding-block-start: var(--inline-padding-value);
+  padding-block-end: var(--inline-padding-value);
+  padding-inline-start: var(--inline-padding-value);
+  padding-inline-end: var(--inline-padding-value);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+@media screen and (min-width: 490px) {
+  .select-database {
+    padding-block-start: var(--inline-padding-value);
+    padding-block-end: var(--inline-padding-value);
+    padding-inline-start: var(--inline-padding-value);
+    padding-inline-end: var(--inline-padding-value);
+  }
+}
+
+.select-database__body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  /* 776px is max width of database list in the designs. */
+  max-inline-size: 48.5rem;
+
+  /* This is a sub-optimal placement
+  The entire body is scrolling when ther's overflow
+  Ideal would be to have only the database list scroll vertically
+  Columns with overflow normally scroll horizontally. */
+  overflow: auto;
+  /* To see horizontal scroll, set this overflow to `hidden`
+  and set an overflow on `select-database__list-wrapper` to `scroll. */
+}
+
+.select-database__list-wrapper {
+  flex-grow: 1;
+  /* flex-shrink: 1; */
+  /* flex-basis: 0; */
+  /* justify-self: stretch; */
+  /* 75 is maximum number of characters, including spaces, that should appear on a line.
+  590px is the roughly width of a database list before it exceeds 75 characters in length.
+  So, the second column should be shown in viewports wider than 620px ( 590 + 2(16) = 622).
+  At this width, the individual column min-width is roughly 280px. */
+
+  /* With the max-block-size wet to 776px (48.5rem). The max column size will be 380px 
+   which is less than the max list item length of 590px. */
+  columns: 280px 2;
+  /* commented it out since it prodcues more than 2 columns layout */
+  /* block-size: 100%; */
+
+  /* Column-fill: auto removes the default behavior of balancing multiple columns.
+  With `auto`, all columns but the last, fill to their height. The last column will 
+  have the remiaining content which may not fill the entire column.
+  **This matches the behavior shown on page 16 of the designs.** */
+  column-fill: auto;
+
+  /* Adding margin here to separate columns from horizontal rule. */
+  padding-block-start: 1.5rem;
+
+  /* Space at the end so that the footer doesn't cover any database list items. */
+  padding-block-end: calc(var(--footer-block-size));
+
+  /* To see native horizontal scrolling of columns overflow, uncomment this 
+  overflow AND set the overflow in `select-database__body` to `hidden`. Then
+  scroll to the right.  */
+  /* overflow: scroll; */
+}
+
+.select-database__footer {
+  /* To keep the buttons always visibly accessible to the user */
+  position: fixed;
+  inset-block-end: 0;
+  block-size: var(--footer-block-size);
+  inline-size: calc(100% - var(--inline-padding-value));
+  background-color: #fff;
+}

@@ -1,0 +1,28 @@
+:root {
+  --inline-padding-value: 1rem;
+  --footer-block-size: 4rem;
+}
+
+body {
+  font-family: Noto Sans SemiBold, sans-serif;
+  text-align: start;
+  color: #55585d;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+#root {
+  height: 100vh;
+}
+
+hr {
+  width: 100%;
+}
+
+@media screen and (min-width: 490px) {
+  :root {
+    --inline-padding-value: 1.5rem;
+  }
+}
