@@ -7,7 +7,6 @@ const handleOnKeyPress = (event) => {
     event.preventDefault();
     console.log('Home, Event:', event);
     console.log('event.currentTarget', event.currentTarget);
-    // console.log("event.parentNode", event.parentNode)
     console.log(
       'event.currentTarget.firstChild',
       event.currentTarget.firstChild
@@ -15,7 +14,6 @@ const handleOnKeyPress = (event) => {
     event.currentTarget.firstChild.focus();
     event.currentTarget.firstChild.scrollIntoView();
     event.currentTarget.firstChild.setAttribute('aria-selected', 'true');
-    event.currentTarget.firstChild.classList.add('focused');
     event.currentTarget.firstChild
       .querySelector('input')
       .classList.add('focused');
@@ -29,7 +27,6 @@ const handleOnKeyPress = (event) => {
       inline: 'nearest',
     });
     event.currentTarget.lastChild.setAttribute('aria-selected', 'true');
-    event.currentTarget.lastChild.classList.add('focused');
     event.currentTarget.lastChild
       .querySelector('input')
       .classList.add('focused');

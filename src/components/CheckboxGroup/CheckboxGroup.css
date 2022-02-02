@@ -20,7 +20,7 @@
 }
 
 .select-database__list-item input:focus {
-  outline: solid;
+  /*outline: solid;*/
 }
 
 .focused {
